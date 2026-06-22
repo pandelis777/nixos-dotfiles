@@ -43,6 +43,8 @@
     windowManager.qtile.enable = true;
   };
   services.displayManager.ly.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.ly.enableGnomeKeyring = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
