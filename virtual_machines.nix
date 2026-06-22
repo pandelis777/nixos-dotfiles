@@ -11,12 +11,14 @@
       swtpm.enable = true;
     };
   };
+
+  programs.virt-manager.enable = true;
+  users.users.panda.extraGroups = [ "libvirtd" "kvm" ];
   
-  users.users.panda.extraGroups = [ "libvirtd" ];
-  
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
+    bridge-utils
     virt-manager
     libvirt
-    qemu
+    qemu_kvm
   ];
 }

@@ -4,6 +4,11 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 in
 {
+  imports = 
+    [
+      ./virtual_machines.nix
+    ];
+
   home.username = "panda";
   home.homeDirectory = "/home/panda";
   programs.git.enable = true;
@@ -30,5 +35,6 @@ in
 
   home.packages = with pkgs; [
     gcc
+    
   ];
 }

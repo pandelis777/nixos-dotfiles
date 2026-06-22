@@ -8,7 +8,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./virtual_machines.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -67,7 +66,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.panda = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
       tree
     ];
