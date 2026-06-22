@@ -1,3 +1,4 @@
+# virt.nix (Import this into configuration.nix)
 { config, pkgs, ... }:
 
 {
@@ -12,13 +13,14 @@
     };
   };
 
+  # This automatically installs the virt-manager package too
   programs.virt-manager.enable = true;
+  
   users.users.panda.extraGroups = [ "libvirtd" "kvm" ];
   
-  home.packages = with pkgs; [
+  # Install necessary tools system-wide for virtualization
+  environment.systemPackages = with pkgs; [
     bridge-utils
-    virt-manager
-    libvirt
-    qemu_kvm
+    # Note: libvirt and qemu_kvm are already pulled in by virtualisation.libvirtd
   ];
 }
