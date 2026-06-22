@@ -8,6 +8,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./virtual_machines.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
