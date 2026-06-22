@@ -1,4 +1,3 @@
-# virt.nix (Import this into configuration.nix)
 { config, pkgs, ... }:
 
 {
@@ -8,19 +7,22 @@
     enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
-      runAsRoot = true;
+      runAsRoot = true; # Crucial: Allows libvirt/QEMU to read files in your home dir
       swtpm.enable = true;
     };
   };
 
-  # This automatically installs the virt-manager package too
   programs.virt-manager.enable = true;
   
   users.users.panda.extraGroups = [ "libvirtd" "kvm" ];
   
-  # Install necessary tools system-wide for virtualization
   environment.systemPackages = with pkgs; [
     bridge-utils
-    # Note: libvirt and qemu_kvm are already pulled in by virtualisation.libvirtd
+  ];
+
+  # Automatically symlink your stealth XML into the system-wide libvirt directory
+  # The "L+" ensures the symlink is forcibly created/updated
+  systemd.tmpfiles.rules = [
+    "L+ /var/lib/libvirt/qemu/windows10.xml - - - - /home/panda/nixos-dotfiles/config/qemu/windows10.xml"
   ];
 }
