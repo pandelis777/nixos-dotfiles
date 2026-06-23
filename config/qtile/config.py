@@ -124,8 +124,7 @@ widget_defaults = dict(
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
-
-logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
+cables = os.path.join(os.path.dirname(libqtile.resources.__file__), "./wallpapers/cable.png")
 screens = [
     Screen(
         bottom=bar.Bar(
@@ -152,9 +151,9 @@ screens = [
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
-#        background="#000000",
-#        wallpaper=logo,
-#        wallpaper_mode="center",
+        #background="#000000",
+        wallpaper=cables,
+        wallpaper_mode="center",
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
