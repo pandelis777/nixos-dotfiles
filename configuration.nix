@@ -43,7 +43,7 @@
     windowManager.qtile.enable = true;
   };
   services.displayManager.ly.enable = true;
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = false;
   security.pam.services.ly.enableGnomeKeyring = true;
 
   # Configure keymap in X11
@@ -85,6 +85,7 @@
     btop	# resource monitor
     rofi	# TODO ?
     git
+    gnome-keyring
   ];
 
   fonts.packages = with pkgs; [
