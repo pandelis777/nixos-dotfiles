@@ -22,7 +22,8 @@
 
   # Automatically symlink your stealth XML into the system-wide libvirt directory
   # The "L+" ensures the symlink is forcibly created/updated
-  systemd.tmpfiles.rules = [
-    "L+ /var/lib/libvirt/qemu/windows10.xml - - - - /home/panda/nixos-dotfiles/config/qemu/windows10.xml"
-  ];
+
+#  systemd.tmpfiles.rules = [
+#    "L+ /var/lib/libvirt/qemu/windows10.xml - - - - /home/panda/nixos-dotfiles/config/qemu/windows10.xml"
+#  ];
 }

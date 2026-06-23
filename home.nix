@@ -30,6 +30,5 @@ in
 
   home.packages = with pkgs; [
     gcc
-    
   ];
 }
