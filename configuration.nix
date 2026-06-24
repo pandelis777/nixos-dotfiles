@@ -9,9 +9,8 @@
     [
       ./hardware-configuration.nix
       ./virt.nix
+      ./apparmor.nix
     ];
-
-  security.apparmor.enable = true;
 
 
   # Use the systemd-boot EFI boot loader.
