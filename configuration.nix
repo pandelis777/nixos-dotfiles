@@ -11,6 +11,9 @@
       ./virt.nix
     ];
 
+  security.apparmor.enable = true;
+
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -43,8 +46,7 @@
     windowManager.qtile.enable = true;
   };
   services.displayManager.ly.enable = true;
-  services.gnome.gnome-keyring.enable = false;
-  security.pam.services.ly.enableGnomeKeyring = true;
+#  security.pam.services.ly.enableGnomeKeyring = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -85,7 +87,7 @@
     btop	# resource monitor
     rofi	# TODO ?
     git
-    gnome-keyring
+#    gnome-keyring
   ];
 
   fonts.packages = with pkgs; [
