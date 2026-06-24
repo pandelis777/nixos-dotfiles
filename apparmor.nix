@@ -1,6 +1,6 @@
 {
   security.apparmor.enable = true;
-  security.apparmor.polices.alacrity = {
+  security.apparmor.policies.alacrity = {
     state = "complain";
     profile = ''
       #include <tunables/global>
