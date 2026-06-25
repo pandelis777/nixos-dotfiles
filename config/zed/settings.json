@@ -1,0 +1,45 @@
+{
+  "icon_theme": {
+    "mode": "light",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "relative_line_numbers": "enabled",
+  "show_edit_predictions": false,
+  "disable_ai": false,
+  "agent": {
+    "dock": "right",
+    "single_file_review": false,
+    "model_parameters": []
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "vim_mode": true,
+  "base_keymap": "Atom",
+  "telemetry": {
+    "metrics": false
+  },
+  "ui_font_size": 16.0,
+  "buffer_font_size": 20.0,
+  "hard_tabs": true,
+  "tab_size": 8,
+  "format_on_save": "off",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "batsignal (dark)"
+  }
+}
